@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice</title>
+    
+  <style>
+    body{
+        background-image: linear-gradient(to right, #434343 0%, black 100%);
+
+    }
+    .dice-img{
+        width: 200px;
+        height: 200px;
+        display: block;
+        margin: 20px auto;
+    }
+    .app-title{
+        text-align: center;
+        color: white;
+    }
+    .btn{
+        width: 200px;
+        display: block;
+        margin: 20px auto;
+        font-size: 20px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 10px;
+        background-image: linear-gradient( 109.6deg,  rgba(217,67,67,1) 11.2%, rgba(242,106,75,1) 100.6% );
+        cursor: pointer;
+        
+    }
+  
+  </style>
+</head>
+<body>
+    <h1 class="app-title">Roll The Dice</h1>
+    <img src="./dice defult.png" alt="dice" class="dice-img" id="dice-img"/>
+    <button class="btn" onclick="roll()">Roll Dice</button>
+    <script>
+        function roll(){
+            const min = 1;
+            const max = 6;
+
+            const randomNumber = Math.round(Math.random() * (max - min)) +min;
+
+            const imgElement = document.getElementById('dice-img');  
+            
+            switch(randomNumber){
+                    case 1:
+                    imgElement.src = 'dice 1.png'
+                    break;
+                    case 2:
+                    imgElement.src = 'dice 2.png'
+                    break;
+                    case 3:
+                    imgElement.src = 'dice 3.png'
+                    break;
+                    case 4:
+                    imgElement.src = 'dice 4.png'
+                    break;
+                    case 5:
+                    imgElement.src = 'dice 5.png'
+                    break;
+                    case 6:
+                    imgElement.src = 'dice 6.png'
+                    break;
+                    default:
+                    imgElement.src = 'dice defult.png'
+            }
+        
+        }
+    </script>
+</body>
+</html>
